@@ -1,0 +1,693 @@
+@charset "utf-8";
+/*common*/
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #000;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #333;
+    text-align: center;
+}
+a {
+    color: #fafafa;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+li {
+    list-style: none;
+}
+.sec-title {
+    margin: 100px 0;
+    text-align: center;
+}
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+/*main-visual&side-button*/
+.main-vs {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.main-vs video {
+    max-width: 1440px;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: relative;
+       min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.main-vs .site-title {
+    width: 35%;
+    height: 18%;
+    position: absolute;
+    top: 41%;
+    left: 32%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
+}
+.main-vs .site-title.active {
+    opacity: 1;
+}
+#side-btn {
+    border: 1px solid #fff;
+    position: fixed;
+    right: -160px;
+    bottom: 200px;
+    transform: rotate(-90deg) translateY(60px);
+    transition: 0.6s;
+    z-index: 30;
+}
+#side-btn.active {
+    right: -100px;
+}
+#side-btn a {
+    width: 120px;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    padding: 15px;
+    transition: 0.3;
+}
+#side-btn a:nth-of-type(2),
+#side-btn a:last-of-type {
+    border-left: 1px solid #fff;
+}
+/*shop*/
+#laundry .meguro {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    align-items: flex-start;
+    width: 100%;
+}
+#laundry .meguro img {
+    width: 36.25%;
+    max-width: 100%;
+    height: auto;
+}
+#laundry .meguro .shop {
+    width: 57.6%;
+    background-color: #d9d9d9;
+    padding: 40px 90px;
+    box-sizing: border-box;
+}
+#laundry .shop-name {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 2px rgba(51, 51, 51, 0.25);
+    margin-bottom: 40px;
+}
+#laundry .meguro .shop .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#laundry .meguro .shop .left {
+    width: 45%; 
+    margin-right: 40px;
+}
+#laundry .meguro .shop .left .open {
+    font-size: 1.375rem;
+}
+#laundry .meguro .shop .left p {
+    display: flex; 
+    align-items: center;
+    gap: 24px;
+    font-size: 1.25rem;
+    text-align: left;
+    margin-bottom: 13px;
+    line-height: 1.25;
+}
+#laundry .meguro .shop .left .check-icon {
+    flex-shrink: 0; 
+    width: 25px;
+    height: 25px;
+}
+#laundry .meguro .shop .left .check-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+#laundry .meguro .shop .left .spec-icon {
+    width: 200px; 
+    height: auto;
+    margin-top: 40px;
+    display: block;
+    align-self: flex-start;
+}
+#laundry .meguro .shop .right {
+    width: 55%;
+}
+#laundry .meguro .shop .right .access {
+    font-size: 1.25rem;
+    line-height: 2;
+    margin-bottom: 25px;
+    text-align: left;
+}
+#laundry .meguro .shop .right iframe {
+    width: 100%;
+    max-width: 269px;
+    height: 189px;
+}
+/*稼働状況*/
+#laundry .sub-title {
+    font-size: 1.875rem;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 15px;
+    display: inline-block;
+    margin-bottom: 80px;
+    position: relative;
+}
+#laundry .sub-title::after {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+.table-meguro {
+    width: 100%; 
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 80px;
+    background-color: #fafafa;
+}
+.table-title {
+    font-size: 2.5rem;
+    background-color: #666;
+    color: #fafafa;
+    padding: 23px 0;
+    font-weight: normal;
+}
+.table-meguro th,
+.table-meguro td {
+    border: 1px solid #333;
+    font-size: 1.25rem;
+    text-align: center;
+    vertical-align: middle;
+}
+.table-meguro thead th {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+.table-meguro thead th:nth-child(1) { width: 15%; }
+.table-meguro thead th:nth-child(2) { width: 19%; }
+.table-meguro thead th:nth-child(3) { width: 20%; }
+.table-meguro thead th:nth-child(4) { width: 22%; }
+.table-meguro thead th:nth-child(5) { width: 24%; }
+.table-meguro td img {
+    width: 40px; 
+    height: 40px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.table-meguro th,
+.table-meguro td {
+    height: 100px;
+}
+#laundry .btn {
+    color: #fafafa;
+    font-size: 1.875rem;
+    margin-bottom: 100px;
+    padding: 20px 70px;
+    border: 1px #fafafa solid;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+#laundry .btn::before,
+#laundry .btn::after {
+    position: absolute;
+    content: "";
+    right: -60px;
+    height: 1px;
+    background-color: #fafafa;
+    transition: 0.3s;
+}
+#laundry .btn::before {
+    width: 120px;
+    top: 40px;
+}
+#laundry .btn::after {
+    width: 30px;
+    top: 33px;
+    transform: rotate(25deg);
+}
+#laundry .btn:hover {
+    opacity: 0.7;
+}
+#laundry .btn:hover::before,
+#laundry .btn:hover::after {
+    right: -100px;
+}
+/*service*/
+.service-img {
+    width: 100%;
+}
+#service .service {
+    color: #333;
+    background-color: #fafafa;
+    margin: 80px auto 100px auto;
+    text-align: center;
+}
+#service .sub-title,
+#contact .sub-title {
+    padding-top: 80px;
+    font-size: 30px;
+    text-shadow: 0 2px 2px rgba(51, 51, 51, 0.25);
+    color: #333;
+    text-align: center;
+    padding-bottom: 15px;
+    display: inline-block;
+    margin-bottom: 80px;
+    position: relative;
+}
+#service .sub-title::after,
+#contact .sub-title::after {
+    position: absolute;
+    content: "";
+    background-color: #333;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 2px 2px rgba(51, 51, 51, 0.25);
+}
+#service .menu {
+    margin-bottom: 80px;
+}
+#service .menu-title {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+    position: relative;
+}
+#service .menu-title::after {
+    position: absolute;
+    content: "";
+    background: #d9d9d9;
+    height: 1px;
+    width: 600px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+#service .list {
+    font-size: 1.25rem;
+    line-height: 2.5;
+    margin-top: 20px;
+}
+#service .caption {
+    padding-bottom: 80px;
+}
+#service .check-icon {
+    width: 30px;
+    height: 30px;
+}
+#service .caption-title {
+    font-size: 1.5rem;
+    line-height: 30px;
+    margin-bottom: 60px;
+}
+#service .caption .text {
+    font-size: 1.25rem;
+    margin-bottom: 50px;
+    line-height: 2;
+}
+#service .caption .text:last-of-type {
+    margin-bottom: 0;
+}
+#service .left {
+    text-align: left;
+    display: inline-block;
+}
+/*contact*/
+#contact .contact {
+    background-color: #fafafa;
+    padding-bottom: 80px;
+}
+#contact .flex {
+    display: flex;
+    margin-bottom: 160px;
+    justify-content: center;
+}
+#contact .name {
+    margin-right: 80px;
+}
+#contact .name,
+#contact .mail,
+#contact .message {
+    font-size: 1.5rem;
+    letter-spacing: 1.3rem;
+}
+.flex label,
+.message {
+    display: block;
+    margin-bottom: 20px;
+}
+.flex .name input,
+.flex .mail input,
+textarea {
+    box-sizing: border-box;
+    font-size: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+.flex .name input{
+    width: 375px;
+    height: 50px;
+}
+.flex .mail input{
+    width: 534px;
+    height: 50px;
+}
+textarea {
+    width: 534px;
+    height: 250px;
+    margin-bottom: 40px;
+}
+#privacy-consent {
+    margin-bottom: 50px;
+    font-size: 1.25rem;
+}
+.consent-btn {
+    font-size: 1.25rem;
+    color: #fafafa;
+    background-color: #333;
+    display: inline-block;
+    padding: 7px 7px;
+    border-radius: 5px;
+}
+.consent-btn:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+/*footer*/
+footer {
+    padding: 80px 0;
+}
+footer .copy-right {
+    color: #fff;
+    font-size: 1rem;
+}
+@media screen and (max-width: 700px) {
+    /*common*/
+.sec-title {
+    max-width: 93px;
+    margin: 30px auto;
+}
+.wrapper {
+    max-width: 410px;
+}
+/*shop*/
+#laundry .meguro {
+   flex-direction: column;
+   align-items: center;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#laundry .meguro img {
+    width: 100%;
+    width: 181px;
+    height: auto;
+    margin-bottom: 30px;
+}
+#laundry .meguro .shop {
+    width: 100%;
+    background-color: #d9d9d9;
+    padding: 0;
+    padding: 30px 0px;
+}
+#laundry .shop-name {
+    font-size: 1.3rem;
+    text-shadow: 0 2px 2px rgba(51, 51, 51, 0.25);
+    margin-bottom: 30px;
+
+}
+#laundry .meguro .shop .flex {
+    flex-direction: column;
+    align-items: center;
+}
+#laundry .meguro .shop .left {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    margin-right: 0px;
+    margin-bottom: 15px;
+}
+#laundry .meguro .shop text {
+    width: 50%;
+}
+#laundry .meguro .shop .spec-icon {
+    width: 50%;
+    max-width: 160px;
+    padding-top: 15px;
+}
+#laundry .meguro .shop .left .open {
+    font-size: 1.125rem;
+    margin-bottom: 30px;
+}
+#laundry .meguro .shop .left p {
+    gap: 10px;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.25;
+}
+#laundry .meguro .shop .left .check-icon {
+    flex-shrink: 0; 
+    width: 18px;
+    height: 18px;
+}
+#laundry .meguro .shop .right {
+    width: 100%;
+}
+#laundry .meguro .shop .right .access {
+    font-size: 0.875rem;
+    line-height: 2;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#laundry .meguro .shop .right iframe {
+    max-width: 269px;
+    height: 189px;
+}
+/*稼働状況*/
+#laundry .sub-title {
+    font-size: 1.125rem;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 13px;
+    display: inline-block;
+    margin-bottom: 25px;
+    position: relative;
+}
+.table-meguro {
+    margin-bottom: 40px;
+}
+.table-title {
+    font-size: 1.125rem;
+    background-color: #666;
+    color: #fafafa;
+    padding: 6px 0;
+    font-weight: normal;
+}
+.table-meguro td {
+    font-size: 0.75rem;
+}
+.table-meguro thead th {
+    font-size: 0.875rem;
+}
+.table-meguro thead th:nth-child(1) { width: 15%; }
+.table-meguro thead th:nth-child(2) { width: 19%; }
+.table-meguro thead th:nth-child(3) { width: 20%; }
+.table-meguro thead th:nth-child(4) { width: 22%; }
+.table-meguro thead th:nth-child(5) { width: 24%; }
+.table-meguro td img {
+    width: 20px; 
+    height: 20px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.table-meguro th,
+.table-meguro td {
+    height: 35px;
+}
+.table-meguro th:nth-child(3) {
+  letter-spacing: -0.06em;
+}
+#laundry .btn {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding: 10px 34px;
+    transition: 0;
+}
+#laundry .btn::before,
+#laundry .btn::after {
+    right: -60px;
+    transition: none;
+}
+#laundry .btn::before {
+    width: 80px;
+    top: 20px;
+}
+#laundry .btn::after {
+    width: 14px;
+    top: 17px;
+}
+#laundry .btn:hover::before,
+#laundry .btn:hover::after {
+    right: -60px;
+}
+#laundry .btn:hover {
+    opacity: 1;
+}
+/*service*/
+#service .service {
+    margin: 30px auto 30px auto;
+}
+#service .sub-title,
+#contact .sub-title {
+    padding-top: 25px;
+    font-size: 1.125rem;
+    padding-bottom: 13px;
+    margin-bottom:25px;
+}
+#service .menu {
+    margin-bottom: 30px;
+}
+#service .menu-title {
+    font-size: 1rem;
+    padding-bottom: 15px;
+}
+#service .menu-title::after {
+    width: 300px;
+}
+#service .list {
+    font-size: 0.875rem;
+    line-height: 2;
+    margin-top: 15px;
+}
+#service .caption {
+    padding-bottom: 40px;
+}
+#service .check-icon {
+    width: 18px;
+    height: 18px;
+}
+#service .caption-title {
+    font-size: 0.875rem;
+    line-height: 18px;
+    margin-bottom: 25px;
+}
+#service .caption .text {
+    font-size: 0.875rem;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+/*contact*/
+#contact .contact {
+    padding-bottom: 40px;
+    margin: 0 auto;
+}
+#contact .flex {
+    flex-direction: column;
+    margin-bottom: 0;
+}
+#contact .name {
+    margin-right: 0;
+}
+#contact .name,
+#contact .mail,
+#contact .message {
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    text-align: left;
+    margin: 10px auto;
+}
+#contact .message {
+    padding-left: 55px;
+}
+.flex label {
+    margin-bottom: 10px;
+}
+.flex .name input,
+.flex .mail input,
+textarea {
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    border-width: 1px;
+}
+.flex .name input{
+    width: 200px;
+    height: 20px;
+}
+.flex .mail input{
+    width: 300px;
+    height: 20px;
+}
+textarea {
+    width: 300px;
+    height: 200px;
+    margin: 10px auto 15px auto;
+    display: block;
+}
+#privacy-consent {
+    margin-bottom: 20px;
+    font-size: 0.75rem;
+}
+.consent-btn {
+    font-size: 0.75rem;
+    padding: 5px 6px;
+    border-radius: 2.5px;
+}
+.consent-btn:hover {
+    opacity: 1;
+    transition: 0;
+}
+/*footer*/
+footer {
+    padding: 80px 0;
+}
+footer {
+    padding: 20px 0;
+}
+footer .copy-right {
+    font-size: 0.625rem;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
